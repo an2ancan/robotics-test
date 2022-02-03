@@ -7,6 +7,6 @@ docker run -it \
 	-e XAUTHORITYS\
 	-e DISPLAY\
 	--device /dev/dri/\
-	ros_dev\
+	an2ancan/ros_dev\
 	env TERM=xterm-256color\
 	/bin/bash

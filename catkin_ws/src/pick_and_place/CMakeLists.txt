@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  ure_movit_conf
   moveit_ros_planning_interface
   tf2_geometry_msgs
   gazebo_msgs

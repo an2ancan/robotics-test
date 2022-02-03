@@ -4,5 +4,12 @@ catkin_ws/logs
 catkin_ws/.catkin_tools
 catkin_ws/src/.rosinstall
 catkin_ws/src/.rosinstall.bak
+catkin_ws/src/geometric_shapes 
+catkin_ws/src/moveitcatkin_ws/src/moveit_msgs 
+catkin_ws/src/moveit_resources 
+catkin_ws/src/moveit_visual_tool 
+catkin_ws/src/panda_moveit_config
+catkin_ws/src/rviz_visual_tools
+catkin_ws/src/srdfdom
 .vscode
 .gitlab-ci.yml

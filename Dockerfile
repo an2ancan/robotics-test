@@ -22,8 +22,8 @@ RUN cd /home/catkin_ws/src\
    && wstool init .\
    && wstool merge -t . https://raw.githubusercontent.com/ros-planning/moveit/master/moveit.rosinstall \
    && wstool remove  moveit_tutorials \
-   && wstool update -t . \
-
+   && wstool update -t . 
+   
 RUN apt-get update
 RUN . /opt/ros/noetic/setup.sh\
 	&& apt install ros-noetic-moveit -y\
@@ -31,8 +31,6 @@ RUN . /opt/ros/noetic/setup.sh\
 	&& rosdep install --rosdistro=noetic --from-path ./src -y --ignore-src\
 	&& catkin build
 	
-RUN apt-get install ros-noetic-trac-ik -y
-
 RUN echo "source /opt/ros/noetic/setup.sh" >> ~/.bashrc
 RUN echo "source /home/catkin_ws/devel/setup.sh" >> ~/.bashrc
 
