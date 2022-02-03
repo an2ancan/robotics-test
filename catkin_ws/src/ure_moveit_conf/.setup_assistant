@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: simple_scene
+    relative_path: urdf/robot.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/ur_robot_gazebo.srdf
+  CONFIG:
+    author_name: aelfimov
+    author_email: ana2ancan@inbox.ru
+    generated_timestamp: 1643805573

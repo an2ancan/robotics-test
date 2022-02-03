@@ -2,5 +2,7 @@ catkin_ws/build
 catkin_ws/devel
 catkin_ws/logs
 catkin_ws/.catkin_tools
+catkin_ws/src/.rosinstall
+catkin_ws/src/.rosinstall.bak
 .vscode
 .gitlab-ci.yml

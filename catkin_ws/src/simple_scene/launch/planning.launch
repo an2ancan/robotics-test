@@ -1,0 +1,17 @@
+<launch>
+  <rosparam command = "load" file = "$(find ure_moveit_conf)/config/joint_names.yaml"/>
+   
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" >
+      <param name="\use_gui" value="false"/>
+      <rosparam param="\source_list">[/joint_states]</rosparam>
+    </node>
+
+    <!-- <include file="$(find ure_moveit_conf)/launch/demo.launch"> -->
+    <include file="$(find ure_moveit_conf)/launch/move_group.launch">
+      <arg name ="publish_monitored_planning_scene" value="true" />
+    </include>
+
+    <!-- <include file="$(find ure_moveit_conf)/launch/moveit_rviz.launch"/> -->
+    <node pkg="pick_and_place" type="pick_and_place" name="pick_and_place"/>
+
+</launch>

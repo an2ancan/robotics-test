@@ -1,0 +1,1 @@
+docker build -t an2ancan/ros_dev .

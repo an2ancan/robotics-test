@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <launch>
+  <param name="/use_sim_time" type="bool" value="true" />
   <!-- Start Gazebo and load the empty world if requested to do so -->
   <include file="$(find simple_scene)/launch/world_bringup.launch"/>
   <include file="$(find simple_scene)/launch/robot_bringup.launch"/>
+  <!-- <include file="$(find simple_scene)/launch/planning.launch"/> -->
+
 </launch>
