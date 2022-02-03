@@ -2,16 +2,13 @@ version: '3'
 
 services:
   ros-master:
-    image: ghcr.io/remyrobotics/robotics-test:latest
+    image: docker.io/an2ancan/ros_dev:latest
     command: stdbuf -o L roscore
     network_mode: host
-    volumes:
-      - ./rep:/rep/:rw
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-
+    command: bash -c "roscore"
+    
   gazebo:
-    image: ghcr.io/remyrobotics/robotics-test:latest
+    image: docker.io/an2ancan/ros_dev:latest
     depends_on:
       - ros-master
     network_mode: host
@@ -22,4 +19,11 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     devices:
     - "/dev/dri/"
-    command: bash -c "cd /home/catkin_ws && source devel/setup.bash && roslaunch --wait simple_scene gazebo.launch"
+    command: bash -c " . devel/setup.bash && roslaunch --wait simple_scene gazebo.launch"
+
+  planning:
+    image: docker.io/an2ancan/ros_dev:latest
+    depends_on:
+      - gazebo
+    network_mode: host
+    command: bash -c "sleep 10; . devel/setup.bash && roslaunch simple_scene planning.launch"

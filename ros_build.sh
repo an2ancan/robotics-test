@@ -1,1 +1,1 @@
-docker build -t an2ancan/ros_dev .
+docker build -t an2ancan/ros_dev:latest .

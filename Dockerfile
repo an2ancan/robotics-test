@@ -15,6 +15,7 @@ RUN apt-get install -y --no-install-recommends \
 RUN rosdep update
 
 COPY catkin_ws/src /home/catkin_ws/src
+COPY catkin_ws/start_pipeline.sh /home/catkin_ws/start_pipeline.sh
 COPY catkin_ws/src/simple_scene/worlds /usr/share/gazebo-11/worlds
 COPY catkin_ws/src/simple_scene/models /root/.gazebo/models
 
@@ -23,6 +24,7 @@ RUN cd /home/catkin_ws/src\
    && wstool merge -t . https://raw.githubusercontent.com/ros-planning/moveit/master/moveit.rosinstall \
    && wstool remove  moveit_tutorials \
    && wstool update -t . 
+
    
 RUN apt-get update
 RUN . /opt/ros/noetic/setup.sh\
